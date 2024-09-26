@@ -25,3 +25,7 @@ describe('POST /create', () => {
         expect(res.body.message).toEqual('Title is required');
     });
 });
+
+afterAll(async () => {
+    await mongoose.connection.close(); // Close the database connection
+});
